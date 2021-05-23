@@ -1,11 +1,11 @@
 import "./App.css";
 import Cats from "./components/Cats";
-import Jquery from "./components/Jquery";
+// import Jquery from "./components/Jquery";
 
 function App() {
   return (
     <>
-      <Jquery />
+      {/* <Jquery /> */}
       <Cats />
     </>
   );
