@@ -9,13 +9,22 @@ function fetchCats() {
 
 function Cats() {
   const [cats, setCats] = useState([]);
+  const [loading, setloading] = useState(true);
 
   const moreCats = () => {
-    fetchCats().then((cats) => setCats(cats));
+    setloading(true);
+
+    fetchCats().then((cats) => {
+      setloading(false);
+      setCats(cats);
+    });
   };
 
   useEffect(() => {
-    fetchCats().then((cats) => setCats(cats));
+    fetchCats().then((cats) => {
+      setloading(false);
+      setCats(cats);
+    });
   }, []);
 
   return (
@@ -30,7 +39,9 @@ function Cats() {
       <button style={{ fontSize: "1.2em" }} onClick={moreCats}>
         Load more cats! 😻
       </button>
-      <Kitties cats={cats} />
+      <p>
+        <Kitties cats={cats} loading={loading} />
+      </p>
     </div>
   );
 }
