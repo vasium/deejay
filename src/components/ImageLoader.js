@@ -47,10 +47,21 @@ function ImageLoader() {
 
   return (
     <Fragment>
+      <div
+        className="title"
+        style={{
+          textAlign: "center",
+          fontSize: "1em",
+          margin: "20px",
+        }}
+      >
+        <h1>These 👉 😻😽🙀😺🐈 ...are cats!!!</h1>
+        <h2>Cats are cool 😎</h2>
+      </div>
       <div className="image-container">
         <img
           alt=""
-          width="400"
+          width="380"
           // height="295"
           src={value.src}
           onLoad={onImageLoaded}
